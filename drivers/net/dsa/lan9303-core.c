@@ -1303,7 +1303,7 @@ static void lan9303_probe_reset_gpio(struct lan9303 *chip,
 				     struct device_node *np)
 {
 	chip->reset_gpio = devm_gpiod_get_optional(chip->dev, "reset",
-						   GPIOD_OUT_LOW);
+						   GPIOD_OUT_HIGH);
 
 	if (IS_ERR(chip->reset_gpio)) {
 		dev_dbg(chip->dev, "No reset GPIO defined\n");
