@@ -1,4 +1,4 @@
 # The following upstream stable releases have been ported:
 [upstream-stable]
-    linux-4.14.y = v4.14.269
-    linux-4.19.y = v4.19.232
+    linux-4.14.y = v4.14.270
+    linux-4.19.y = v4.19.233
