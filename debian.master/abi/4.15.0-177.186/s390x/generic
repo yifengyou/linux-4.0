@@ -8742,7 +8742,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x45be6c3a	ping_init_sock
 EXPORT_SYMBOL_GPL vmlinux 0x45bf1ff3	crypto_inc
 EXPORT_SYMBOL_GPL vmlinux 0x45f0273d	crypto_unregister_kpp
 EXPORT_SYMBOL_GPL vmlinux 0x46013233	net_dec_ingress_queue
-EXPORT_SYMBOL_GPL vmlinux 0x464b8ff2	nf_queue_entry_get_refs
 EXPORT_SYMBOL_GPL vmlinux 0x466dea54	sbitmap_queue_show
 EXPORT_SYMBOL_GPL vmlinux 0x46755394	tty_port_register_device_attr_serdev
 EXPORT_SYMBOL_GPL vmlinux 0x4688d7ec	pvclock_gtod_unregister_notifier
@@ -8950,6 +8949,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x597f879e	__gmap_translate
 EXPORT_SYMBOL_GPL vmlinux 0x59a2323b	crypto_unregister_aead
 EXPORT_SYMBOL_GPL vmlinux 0x59a5e7d6	dma_buf_put
 EXPORT_SYMBOL_GPL vmlinux 0x59cbb02f	sbitmap_get
+EXPORT_SYMBOL_GPL vmlinux 0x59ce6d71	nf_queue_entry_get_refs
 EXPORT_SYMBOL_GPL vmlinux 0x59cef5aa	ip_local_out
 EXPORT_SYMBOL_GPL vmlinux 0x59dc7a2b	__inet_twsk_hashdance
 EXPORT_SYMBOL_GPL vmlinux 0x59e281b4	rtnl_register
