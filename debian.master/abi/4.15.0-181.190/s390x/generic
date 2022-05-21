@@ -9147,7 +9147,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x6b4180e8	virtqueue_detach_unused_buf
 EXPORT_SYMBOL_GPL vmlinux 0x6b4339bc	srcu_torture_stats_print
 EXPORT_SYMBOL_GPL vmlinux 0x6b4c9ed2	ip6_dst_lookup
 EXPORT_SYMBOL_GPL vmlinux 0x6b843f92	ipv6_recv_error
-EXPORT_SYMBOL_GPL vmlinux 0x6b8f5900	virtio_finalize_features
 EXPORT_SYMBOL_GPL vmlinux 0x6b8ffcca	dump_trace
 EXPORT_SYMBOL_GPL vmlinux 0x6bc9ff31	kern_mount_data
 EXPORT_SYMBOL_GPL vmlinux 0x6c07d933	add_uevent_var

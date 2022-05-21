@@ -20633,7 +20633,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x921d982f	security_inode_mkdir
 EXPORT_SYMBOL_GPL vmlinux 0x923c5dbf	__fscrypt_prepare_rename
 EXPORT_SYMBOL_GPL vmlinux 0x924c46f8	zs_unmap_object
 EXPORT_SYMBOL_GPL vmlinux 0x924e3797	pm_generic_restore
-EXPORT_SYMBOL_GPL vmlinux 0x9260b869	virtio_finalize_features
 EXPORT_SYMBOL_GPL vmlinux 0x926fa6a7	led_trigger_unregister
 EXPORT_SYMBOL_GPL vmlinux 0x928083d6	serial8250_rpm_put_tx
 EXPORT_SYMBOL_GPL vmlinux 0x928a8023	ata_acpi_gtm

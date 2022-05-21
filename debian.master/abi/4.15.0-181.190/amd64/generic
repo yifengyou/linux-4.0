@@ -19250,7 +19250,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x45c8561d	kick_process
 EXPORT_SYMBOL_GPL vmlinux 0x45d14bdf	hypercall_page
 EXPORT_SYMBOL_GPL vmlinux 0x45d1bb4b	skb_append_pagefrags
 EXPORT_SYMBOL_GPL vmlinux 0x45e22c6c	sata_async_notification
-EXPORT_SYMBOL_GPL vmlinux 0x45e60406	virtio_finalize_features
 EXPORT_SYMBOL_GPL vmlinux 0x45f4ca6d	sysfs_add_file_to_group
 EXPORT_SYMBOL_GPL vmlinux 0x45fb7e9f	iommu_group_add_device
 EXPORT_SYMBOL_GPL vmlinux 0x46013233	net_dec_ingress_queue

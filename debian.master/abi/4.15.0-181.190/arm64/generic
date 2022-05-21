@@ -6547,6 +6547,7 @@ EXPORT_SYMBOL vmlinux 0x154c6338	dm_kcopyd_client_destroy
 EXPORT_SYMBOL vmlinux 0x155072bc	dev_get_flags
 EXPORT_SYMBOL vmlinux 0x1563f4dd	vme_dma_list_exec
 EXPORT_SYMBOL vmlinux 0x1564397e	pcie_capability_read_dword
+EXPORT_SYMBOL vmlinux 0x157ace73	cpu_hwcaps
 EXPORT_SYMBOL vmlinux 0x157c355f	alloc_pages_current
 EXPORT_SYMBOL vmlinux 0x15880516	tty_driver_kref_put
 EXPORT_SYMBOL vmlinux 0x15948579	insert_inode_locked
@@ -7472,7 +7473,6 @@ EXPORT_SYMBOL vmlinux 0x426a4a7d	param_get_invbool
 EXPORT_SYMBOL vmlinux 0x42729ce4	filemap_write_and_wait_range
 EXPORT_SYMBOL vmlinux 0x42830f35	param_get_ulong
 EXPORT_SYMBOL vmlinux 0x42846951	__sk_mem_reclaim
-EXPORT_SYMBOL vmlinux 0x428bc0af	cpu_hwcap_keys
 EXPORT_SYMBOL vmlinux 0x42909d5d	kernel_sendmsg_locked
 EXPORT_SYMBOL vmlinux 0x429cca75	netdev_printk
 EXPORT_SYMBOL vmlinux 0x42a2b7d8	devm_alloc_etherdev_mqs
@@ -9875,6 +9875,7 @@ EXPORT_SYMBOL vmlinux 0xba497f13	loops_per_jiffy
 EXPORT_SYMBOL vmlinux 0xba521aba	__page_symlink
 EXPORT_SYMBOL vmlinux 0xba54f596	refcount_add
 EXPORT_SYMBOL vmlinux 0xba5c35f6	skb_queue_purge
+EXPORT_SYMBOL vmlinux 0xba5fc1f0	cpu_hwcap_keys
 EXPORT_SYMBOL vmlinux 0xba79f4ad	eth_header_cache
 EXPORT_SYMBOL vmlinux 0xba847126	dm_unregister_target
 EXPORT_SYMBOL vmlinux 0xba919720	dpbp_is_enabled
@@ -9962,7 +9963,6 @@ EXPORT_SYMBOL vmlinux 0xbe82dfc3	md_handle_request
 EXPORT_SYMBOL vmlinux 0xbe9065e2	simple_dir_inode_operations
 EXPORT_SYMBOL vmlinux 0xbe911693	xfrm_replay_seqhi
 EXPORT_SYMBOL vmlinux 0xbe9dccde	filemap_fault
-EXPORT_SYMBOL vmlinux 0xbe9f1a32	cpu_hwcaps
 EXPORT_SYMBOL vmlinux 0xbec2596d	nf_afinfo
 EXPORT_SYMBOL vmlinux 0xbec6c13c	blk_queue_bounce_limit
 EXPORT_SYMBOL vmlinux 0xbed6dd3e	cros_ec_prepare_tx
@@ -20694,7 +20694,6 @@ EXPORT_SYMBOL_GPL vmlinux 0xb902f27d	ata_port_wait_eh
 EXPORT_SYMBOL_GPL vmlinux 0xb903674c	scatterwalk_map_and_copy
 EXPORT_SYMBOL_GPL vmlinux 0xb9122e13	crypto_alloc_instance
 EXPORT_SYMBOL_GPL vmlinux 0xb917b6d7	return_address
-EXPORT_SYMBOL_GPL vmlinux 0xb91edb6a	virtio_finalize_features
 EXPORT_SYMBOL_GPL vmlinux 0xb9265906	wakeup_source_destroy
 EXPORT_SYMBOL_GPL vmlinux 0xb9314011	virtqueue_kick
 EXPORT_SYMBOL_GPL vmlinux 0xb9389bf5	pinctrl_generic_get_group_count

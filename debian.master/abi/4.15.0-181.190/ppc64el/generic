@@ -19358,7 +19358,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x8ee51439	save_stack_trace_tsk
 EXPORT_SYMBOL_GPL vmlinux 0x8eee3399	dax_read_unlock
 EXPORT_SYMBOL_GPL vmlinux 0x8efebd9a	nvdimm_name
 EXPORT_SYMBOL_GPL vmlinux 0x8f0748af	rcu_expedite_gp
-EXPORT_SYMBOL_GPL vmlinux 0x8f29c6f8	virtio_finalize_features
 EXPORT_SYMBOL_GPL vmlinux 0x8f34072e	usb_hcd_platform_shutdown
 EXPORT_SYMBOL_GPL vmlinux 0x8f499a6c	input_class
 EXPORT_SYMBOL_GPL vmlinux 0x8f60e857	dm_device_name

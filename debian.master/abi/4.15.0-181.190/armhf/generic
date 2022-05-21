@@ -19858,7 +19858,6 @@ EXPORT_SYMBOL_GPL vmlinux 0xa15116bc	ahci_platform_enable_resources
 EXPORT_SYMBOL_GPL vmlinux 0xa15d48ba	blk_mq_debugfs_rq_show
 EXPORT_SYMBOL_GPL vmlinux 0xa164ce69	pm_generic_restore
 EXPORT_SYMBOL_GPL vmlinux 0xa16d4bb5	fuse_get_req
-EXPORT_SYMBOL_GPL vmlinux 0xa1701113	virtio_finalize_features
 EXPORT_SYMBOL_GPL vmlinux 0xa170b7fc	of_pwm_get
 EXPORT_SYMBOL_GPL vmlinux 0xa18f11d8	iommu_domain_window_disable
 EXPORT_SYMBOL_GPL vmlinux 0xa18f9433	mpi_read_buffer

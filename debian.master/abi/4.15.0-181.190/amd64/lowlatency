@@ -19691,7 +19691,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x5bf0e1a4	dm_noflush_suspending
 EXPORT_SYMBOL_GPL vmlinux 0x5bfd5998	crypto_aes_set_key
 EXPORT_SYMBOL_GPL vmlinux 0x5c00e29b	devm_gpiochip_remove
 EXPORT_SYMBOL_GPL vmlinux 0x5c0923a9	regulator_force_disable
-EXPORT_SYMBOL_GPL vmlinux 0x5c0db44e	virtio_finalize_features
 EXPORT_SYMBOL_GPL vmlinux 0x5c1b4017	preempt_notifier_register
 EXPORT_SYMBOL_GPL vmlinux 0x5c2ca4f0	rtnl_register
 EXPORT_SYMBOL_GPL vmlinux 0x5c348c5e	crypto_has_skcipher2

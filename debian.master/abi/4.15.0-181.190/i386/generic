@@ -18102,7 +18102,6 @@ EXPORT_SYMBOL_GPL vmlinux 0x0d400d53	housekeeping_affine
 EXPORT_SYMBOL_GPL vmlinux 0x0d459213	work_on_cpu_safe
 EXPORT_SYMBOL_GPL vmlinux 0x0d4961de	nf_log_buf_open
 EXPORT_SYMBOL_GPL vmlinux 0x0d5e6fe3	fat_getattr
-EXPORT_SYMBOL_GPL vmlinux 0x0d622de9	virtio_finalize_features
 EXPORT_SYMBOL_GPL vmlinux 0x0d7bdf12	register_pernet_subsys
 EXPORT_SYMBOL_GPL vmlinux 0x0d7bfeff	crypto_grab_aead
 EXPORT_SYMBOL_GPL vmlinux 0x0d7d4d70	rcu_batches_completed
