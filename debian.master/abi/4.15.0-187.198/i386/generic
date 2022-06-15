@@ -19389,6 +19389,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x4cf1b0f6	gpiochip_is_requested
 EXPORT_SYMBOL_GPL vmlinux 0x4cf1b114	pinctrl_utils_free_map
 EXPORT_SYMBOL_GPL vmlinux 0x4cf24332	__usb_get_extra_descriptor
 EXPORT_SYMBOL_GPL vmlinux 0x4d0015e2	cpu_hotplug_disable
+EXPORT_SYMBOL_GPL vmlinux 0x4d15ff68	mmio_stale_data_clear
 EXPORT_SYMBOL_GPL vmlinux 0x4d192b65	percpu_up_write
 EXPORT_SYMBOL_GPL vmlinux 0x4d25ccfe	crypto_unregister_algs
 EXPORT_SYMBOL_GPL vmlinux 0x4d336896	acpi_pci_check_ejectable

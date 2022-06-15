@@ -19325,6 +19325,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x4cf24332	__usb_get_extra_descriptor
 EXPORT_SYMBOL_GPL vmlinux 0x4cf6cf1f	pinctrl_find_gpio_range_from_pin
 EXPORT_SYMBOL_GPL vmlinux 0x4cf8c46d	ata_dummy_port_info
 EXPORT_SYMBOL_GPL vmlinux 0x4d0015e2	cpu_hotplug_disable
+EXPORT_SYMBOL_GPL vmlinux 0x4d15ff68	mmio_stale_data_clear
 EXPORT_SYMBOL_GPL vmlinux 0x4d5706f8	extcon_set_state
 EXPORT_SYMBOL_GPL vmlinux 0x4d62f307	rhashtable_destroy
 EXPORT_SYMBOL_GPL vmlinux 0x4d732007	acpi_register_gsi

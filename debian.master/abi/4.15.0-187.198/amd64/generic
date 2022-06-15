@@ -20951,6 +20951,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x9cbc386c	xen_unmap_domain_gfn_range
 EXPORT_SYMBOL_GPL vmlinux 0x9cc4f70a	register_pm_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x9cc57332	device_unregister
 EXPORT_SYMBOL_GPL vmlinux 0x9ccf9038	clockevent_delta2ns
+EXPORT_SYMBOL_GPL vmlinux 0x9cf72c86	mmio_stale_data_clear
 EXPORT_SYMBOL_GPL vmlinux 0x9d101442	crypto_unregister_akcipher
 EXPORT_SYMBOL_GPL vmlinux 0x9d18be01	cs47l24_spi_regmap
 EXPORT_SYMBOL_GPL vmlinux 0x9d3030be	regmap_add_irq_chip

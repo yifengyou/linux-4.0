@@ -20941,6 +20941,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x9cc4f70a	register_pm_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x9cc6ba14	xfrm_local_error
 EXPORT_SYMBOL_GPL vmlinux 0x9cce171a	extcon_set_property_sync
 EXPORT_SYMBOL_GPL vmlinux 0x9ce63589	crypto_chain
+EXPORT_SYMBOL_GPL vmlinux 0x9cf72c86	mmio_stale_data_clear
 EXPORT_SYMBOL_GPL vmlinux 0x9d01f0c9	intel_pinctrl_suspend
 EXPORT_SYMBOL_GPL vmlinux 0x9d1da104	blkcipher_walk_virt
 EXPORT_SYMBOL_GPL vmlinux 0x9d318761	usb_hcd_end_port_resume
