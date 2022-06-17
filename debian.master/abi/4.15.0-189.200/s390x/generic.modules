@@ -595,7 +595,6 @@ osst
 overlay
 p8022
 paes_s390
-pblk
 pcbc
 pci-stub
 pcrypt
@@ -644,7 +643,6 @@ rmd320
 rockchip
 rpcrdma
 rpcsec_gss_krb5
-rrpc
 rxrpc
 s390-trng
 salsa20_generic

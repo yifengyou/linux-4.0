@@ -3109,7 +3109,6 @@ pata_sil680
 pata_sl82c105
 pata_triflex
 pata_via
-pblk
 pc300too
 pc87360
 pc87413_wdt
@@ -3545,7 +3544,6 @@ rpcsec_gss_krb5
 rpmsg_char
 rpmsg_core
 rpr0521
-rrpc
 rsi_91x
 rsi_sdio
 rsi_usb
