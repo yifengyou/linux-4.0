@@ -57,6 +57,9 @@
 #define F_NEEDS_EFFICIENT_UNALIGNED_ACCESS	(1 << 0)
 #define F_LOAD_WITH_STRICT_ALIGNMENT		(1 << 1)
 
+#define UNPRIV_SYSCTL "kernel/unprivileged_bpf_disabled"
+static bool unpriv_disabled = false;
+
 struct bpf_test {
 	const char *descr;
 	struct bpf_insn	insns[MAX_INSNS];
@@ -10196,6 +10199,17 @@ out:
 	return ret;
 }
 
+static void get_unpriv_disabled()
+{
+	char buf[2];
+	FILE *fd;
+
+	fd = fopen("/proc/sys/"UNPRIV_SYSCTL, "r");
+	if (fgets(buf, 2, fd) == buf && atoi(buf))
+		unpriv_disabled = true;
+	fclose(fd);
+}
+
 static int do_test(bool unpriv, unsigned int from, unsigned int to)
 {
 	int i, passes = 0, errors = 0, skips = 0;
@@ -10206,7 +10220,10 @@ static int do_test(bool unpriv, unsigned int from, unsigned int to)
 		/* Program types that are not supported by non-root we
 		 * skip right away.
 		 */
-		if (!test->prog_type) {
+		if (!test->prog_type && unpriv_disabled) {
+			printf("#%d/u %s SKIP\n", i, test->descr);
+			skips++;
+		} else if (!test->prog_type) {
 			if (!unpriv)
 				set_admin(false);
 			printf("#%d/u %s ", i, test->descr);
@@ -10251,6 +10268,13 @@ int main(int argc, char **argv)
 			from = t;
 			to   = t + 1;
 		}
+	}
+
+	get_unpriv_disabled();
+	if (unpriv && unpriv_disabled) {
+		printf("Cannot run as unprivileged user with sysctl %s.\n",
+		       UNPRIV_SYSCTL);
+		return EXIT_FAILURE;
 	}
 
 	setrlimit(RLIMIT_MEMLOCK, unpriv ? &rlim : &rinf);
