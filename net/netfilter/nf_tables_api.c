@@ -3963,6 +3963,7 @@ static int nft_add_set_elem(struct nft_ctx *ctx, struct nft_set *set,
 	struct nft_data data;
 	enum nft_registers dreg;
 	struct nft_trans *trans;
+	u32 dtype;
 	u32 flags = 0;
 	u64 timeout;
 	u8 ulen;
@@ -4048,7 +4049,13 @@ static int nft_add_set_elem(struct nft_ctx *ctx, struct nft_set *set,
 			goto err2;
 
 		err = -EINVAL;
-		if (set->dtype != NFT_DATA_VERDICT && d2.len != set->dlen)
+
+		if (set->dtype == NFT_DATA_VERDICT)
+			dtype = NFT_DATA_VERDICT;
+		else
+			dtype = NFT_DATA_VALUE;
+
+		if (dtype != d2.type || set->dlen != d2.len)
 			goto err3;
 
 		dreg = nft_type_to_reg(set->dtype);
