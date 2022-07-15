@@ -40,6 +40,8 @@ modules.order
 .config.old
 .tmp_versions
 
+
+*.ext4
 rootfs_debian_x86_64
 rootfs_debian_arm32
 rootfs_debian_arm64
