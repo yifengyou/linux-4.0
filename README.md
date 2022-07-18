@@ -8,6 +8,10 @@ First, please watch or star this repo, I'll be more happy if you follow me.
 Bug report, questions and discussion are welcome, you can post an issue or pull a request.
 ```
 
+## 相关站点
+
+* 笨叔GitHub仓库(分支**rlk_basic**):<https://github.com/figozhang/runninglinuxkernel_4.0>
+
 ## 目录
 
 
@@ -21,6 +25,10 @@ Bug report, questions and discussion are welcome, you can post an issue or pull 
     * [内核编译选项知多少](docs/带着问题读内核/内核编译选项知多少.md)
     * [内核版本号实现细节](docs/带着问题读内核/内核版本号实现细节.md)
     * [Linux如何知道系统中有多少内存](docs/带着问题读内核/Linux如何知道系统中有多少内存.md)
+    * [current在内核中的前前后后](docs/带着问题读内核/current在内核中的前前后后.md)
+
+
+## 实验说明
 
 
 
