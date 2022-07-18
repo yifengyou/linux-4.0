@@ -5,6 +5,7 @@
     * [vscode远程开发](docs/环境搭建/vscode远程开发.md)
     * [x86_64](docs/环境搭建/x86_64.md)
     * [aarch64](docs/环境搭建/aarch64.md)
+    * [x86](docs/环境搭建/x86.md)
     * [arm](docs/环境搭建/arm.md)
 * [带着问题读内核](docs/带着问题读内核.md)
     * [内核编译选项知多少](docs/带着问题读内核/内核编译选项知多少.md)
