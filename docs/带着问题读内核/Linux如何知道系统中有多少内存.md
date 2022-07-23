@@ -35,11 +35,38 @@
 
 * ARM比较懒，需要人直接将信息喂到嘴里。那就是DTS（Device Tree Source）
 * 起初，嵌入式设备多如牛毛，设备类型多样，接口多样，内核为此合入超多混杂的设备代码，因此被linus吐槽。不可能稍微一个设备改改，一个产品改改，整个内核代码都跟着动，做法愚蠢，必须整改
-* 既然设备多入牛毛，那就简单粗暴，直接喂内核数据，不要让内核自己探测。这类探测代码实际意义不大，固定且机械。
+* 既然设备多入牛毛，那就简单粗暴，直接喂内核数据，不要让内核自己探测。这类探测代码实际意义不大？虽然每设备探测都有多如牛毛的细则，再者每次探测都是有一定耗时，尤其是兼容性而言。让内核来，不如让硬件厂商相互协定，这里，硬件厂商毫无疑问，```主板<->外设``` 之间，各类新型接口协议的定制，都需要时间、人力开销。
 *
 
 
 
+
+## ARM Vexpress简介
+
+**Arm Versatile Express boards(Vexpress)**
+
+* <https://qemu-project.gitlab.io/qemu/system/arm/vexpress.html>
+
+```
+QEMU models two variants of the Arm Versatile Express development board family:
+
+vexpress-a9 models the combination of the Versatile Express motherboard and the CoreTile Express A9x4 daughterboard
+
+vexpress-a15 models the combination of the Versatile Express motherboard and the CoreTile Express A15x2 daughterboard
+```
+
+* ARM Versatile Express开发板（简称VE板）是ARM公司推出的，提供给厂商评估ARM内核的高效的软硬件平台。在中国地区，各厂商可以通过米尔科技获得ARM授权的正版ARM Versatile Express开发板。
+
+* <http://bbs.myir-tech.com/thread-6248-1-1.html>
+
+
+![20220723_112708_52](image/20220723_112708_52.png)
+
+![20220723_112713_54](image/20220723_112713_54.png)
+
+![20220723_112717_70](image/20220723_112717_70.png)
+
+![20220723_112722_85](image/20220723_112722_85.png)
 
 
 
