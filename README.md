@@ -23,6 +23,7 @@ Bug report, questions and discussion are welcome, you can post an issue or pull 
     * [arm](docs/环境搭建/arm.md)
 * [带着问题读内核](docs/带着问题读内核.md)
     * [内核编译选项知多少](docs/带着问题读内核/内核编译选项知多少.md)
+    * [内核启动日志](docs/带着问题读内核/内核启动日志.md)
     * [内核版本号实现细节](docs/带着问题读内核/内核版本号实现细节.md)
     * [current在内核中的前前后后](docs/带着问题读内核/current在内核中的前前后后.md)
     * [如何获取内核编译细节](docs/带着问题读内核/如何获取内核编译细节.md)
