@@ -14,9 +14,10 @@ Bug report, questions and discussion are welcome, you can post an issue or pull 
 
 ## 目录
 
-
 * [环境搭建](docs/环境搭建.md)
     * [vscode远程开发](docs/环境搭建/vscode远程开发.md)
+    * [Rocky Linux8.6开发环境搭建](docs/环境搭建/Rocky_Linux8.6开发环境搭建.md)
+    * [Qemu7.0编译](docs/环境搭建/Qemu7.0编译.md)
     * [x86_64](docs/环境搭建/x86_64.md)
     * [aarch64](docs/环境搭建/aarch64.md)
     * [x86](docs/环境搭建/x86.md)
@@ -28,6 +29,8 @@ Bug report, questions and discussion are welcome, you can post an issue or pull 
     * [current在内核中的前前后后](docs/带着问题读内核/current在内核中的前前后后.md)
     * [如何获取内核编译细节](docs/带着问题读内核/如何获取内核编译细节.md)
     * [Linux如何知道系统中有多少内存](docs/带着问题读内核/Linux如何知道系统中有多少内存.md)
+    * [32位系统用户空间和内核空间占比3:1可否修改](docs/带着问题读内核/32位系统用户空间和内核空间占比3_1可否修改.md)
+
 
 
 ## 实验说明
