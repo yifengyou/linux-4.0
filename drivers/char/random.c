@@ -2092,10 +2092,10 @@ SYSCALL_DEFINE3(getrandom, char __user *, buf, size_t, count,
 	if (flags & GRND_RANDOM)
 		return _random_read(flags & GRND_NONBLOCK, buf, count);
 
-	if (crng_init == 0) {
+	if (!crng_ready()) {
 		if (flags & GRND_NONBLOCK)
 			return -EAGAIN;
-		ret = wait_event_interruptible(crng_init_wait, crng_init > 0);
+		ret = wait_for_random_bytes();
 		if (unlikely(ret))
 			return ret;
 	}
