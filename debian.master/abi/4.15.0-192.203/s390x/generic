@@ -2661,7 +2661,6 @@ EXPORT_SYMBOL vmlinux 0x42ff0599	devm_gpio_request
 EXPORT_SYMBOL vmlinux 0x4302d0eb	free_pages
 EXPORT_SYMBOL vmlinux 0x43153360	unregister_shrinker
 EXPORT_SYMBOL vmlinux 0x431a1060	d_make_root
-EXPORT_SYMBOL vmlinux 0x431e6927	__next_node_in
 EXPORT_SYMBOL vmlinux 0x433506b1	clear_inode
 EXPORT_SYMBOL vmlinux 0x433f2c4c	pci_bus_assign_resources
 EXPORT_SYMBOL vmlinux 0x4344116e	blk_mq_start_request
@@ -3717,7 +3716,6 @@ EXPORT_SYMBOL vmlinux 0x83943604	ap_flush_queue
 EXPORT_SYMBOL vmlinux 0x83b009ea	xfrm_state_walk_init
 EXPORT_SYMBOL vmlinux 0x83c21bb9	filemap_page_mkwrite
 EXPORT_SYMBOL vmlinux 0x83c48d99	register_service_level
-EXPORT_SYMBOL vmlinux 0x83c52fba	xfrm4_protocol_init
 EXPORT_SYMBOL vmlinux 0x83c8fcb5	proc_dointvec_ms_jiffies
 EXPORT_SYMBOL vmlinux 0x83d5a597	ptep_xchg_direct
 EXPORT_SYMBOL vmlinux 0x83d75459	dev_load
@@ -5382,7 +5380,6 @@ EXPORT_SYMBOL vmlinux 0xefc74f99	dump_page
 EXPORT_SYMBOL vmlinux 0xefdd70ce	security_secid_to_secctx
 EXPORT_SYMBOL vmlinux 0xeffcc8f1	pci_find_next_bus
 EXPORT_SYMBOL vmlinux 0xf0009fee	put_pages_list
-EXPORT_SYMBOL vmlinux 0xf008a885	seg6_hmac_init
 EXPORT_SYMBOL vmlinux 0xf018420c	skb_try_coalesce
 EXPORT_SYMBOL vmlinux 0xf0187927	__sg_page_iter_next
 EXPORT_SYMBOL vmlinux 0xf02a8642	__remove_inode_hash
@@ -5523,6 +5520,7 @@ EXPORT_SYMBOL vmlinux 0xf84abf72	xfrm_policy_byid
 EXPORT_SYMBOL vmlinux 0xf853ccd8	memory_cgrp_subsys
 EXPORT_SYMBOL vmlinux 0xf858d380	__xfrm_policy_check
 EXPORT_SYMBOL vmlinux 0xf86e6516	unregister_sysctl_table
+EXPORT_SYMBOL vmlinux 0xf875606c	__next_node_in
 EXPORT_SYMBOL vmlinux 0xf87b3a88	__skb_recv_udp
 EXPORT_SYMBOL vmlinux 0xf8812a29	eth_prepare_mac_addr_change
 EXPORT_SYMBOL vmlinux 0xf8817bcd	vfs_symlink
@@ -6201,7 +6199,6 @@ EXPORT_SYMBOL_GPL drivers/net/phy/fixed_phy 0xb5ba72fc	fixed_phy_set_link_update
 EXPORT_SYMBOL_GPL drivers/net/phy/fixed_phy 0xf47d4fba	fixed_phy_unregister
 EXPORT_SYMBOL_GPL drivers/net/phy/libphy 0x18e4f8aa	swphy_read_reg
 EXPORT_SYMBOL_GPL drivers/net/phy/libphy 0x1e0b3634	genphy_c45_read_link
-EXPORT_SYMBOL_GPL drivers/net/phy/libphy 0x2a0a40fa	mdio_bus_init
 EXPORT_SYMBOL_GPL drivers/net/phy/libphy 0x2b64048e	genphy_c45_restart_aneg
 EXPORT_SYMBOL_GPL drivers/net/phy/libphy 0x39eb6f7e	genphy_c45_read_pma
 EXPORT_SYMBOL_GPL drivers/net/phy/libphy 0x4a2cefc1	phy_restart_aneg
@@ -6423,12 +6420,12 @@ EXPORT_SYMBOL_GPL drivers/scsi/fcoe/libfcoe 0x193c7cba	fcoe_start_io
 EXPORT_SYMBOL_GPL drivers/scsi/fcoe/libfcoe 0x22818498	fcoe_get_lesb
 EXPORT_SYMBOL_GPL drivers/scsi/fcoe/libfcoe 0x2f36d06b	fcoe_clean_pending_queue
 EXPORT_SYMBOL_GPL drivers/scsi/fcoe/libfcoe 0x5b5dc3a7	fcoe_link_speed_update
+EXPORT_SYMBOL_GPL drivers/scsi/fcoe/libfcoe 0x6217c0ce	fcoe_wwn_from_mac
 EXPORT_SYMBOL_GPL drivers/scsi/fcoe/libfcoe 0x7b2a62d3	fcoe_fcf_device_add
 EXPORT_SYMBOL_GPL drivers/scsi/fcoe/libfcoe 0x84b3d915	fcoe_wwn_to_str
 EXPORT_SYMBOL_GPL drivers/scsi/fcoe/libfcoe 0x85afdca9	fcoe_get_paged_crc_eof
 EXPORT_SYMBOL_GPL drivers/scsi/fcoe/libfcoe 0x89a9a613	fcoe_fcf_device_delete
 EXPORT_SYMBOL_GPL drivers/scsi/fcoe/libfcoe 0x8ed93523	fcoe_ctlr_device_add
-EXPORT_SYMBOL_GPL drivers/scsi/fcoe/libfcoe 0x998b5080	fcoe_wwn_from_mac
 EXPORT_SYMBOL_GPL drivers/scsi/fcoe/libfcoe 0x9ebc0c68	fcoe_check_wait_queue
 EXPORT_SYMBOL_GPL drivers/scsi/fcoe/libfcoe 0xaaa5ddbe	__fcoe_get_lesb
 EXPORT_SYMBOL_GPL drivers/scsi/fcoe/libfcoe 0xb53075d4	fcoe_validate_vport_create
