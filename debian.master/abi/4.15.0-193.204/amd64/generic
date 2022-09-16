@@ -21841,6 +21841,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xcb391fac	edac_get_sysfs_subsys
 EXPORT_SYMBOL_GPL vmlinux 0xcb452593	pinctrl_dev_get_drvdata
 EXPORT_SYMBOL_GPL vmlinux 0xcb685586	ehci_hub_control
 EXPORT_SYMBOL_GPL vmlinux 0xcb6a6cdf	rtnl_register
+EXPORT_SYMBOL_GPL vmlinux 0xcb7086db	fbcon_modechange_possible
 EXPORT_SYMBOL_GPL vmlinux 0xcb77c4f5	devm_acpi_dev_add_driver_gpios
 EXPORT_SYMBOL_GPL vmlinux 0xcb7be42e	usb_get_phy
 EXPORT_SYMBOL_GPL vmlinux 0xcb7ec250	trace_event_buffer_commit

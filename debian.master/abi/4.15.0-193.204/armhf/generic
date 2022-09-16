@@ -17913,6 +17913,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x41924c70	debugfs_lookup
 EXPORT_SYMBOL_GPL vmlinux 0x419f0d8a	crypto_register_ahashes
 EXPORT_SYMBOL_GPL vmlinux 0x41a98fe0	gpiod_get_raw_value
 EXPORT_SYMBOL_GPL vmlinux 0x41a9b77b	pci_epf_free_space
+EXPORT_SYMBOL_GPL vmlinux 0x41b91b8c	fbcon_modechange_possible
 EXPORT_SYMBOL_GPL vmlinux 0x41bd1d64	validate_xmit_skb_list
 EXPORT_SYMBOL_GPL vmlinux 0x41bf88b9	ata_sff_tf_read
 EXPORT_SYMBOL_GPL vmlinux 0x41c28407	input_ff_event

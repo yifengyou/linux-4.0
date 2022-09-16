@@ -17820,6 +17820,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x006820b4	pci_write_msi_msg
 EXPORT_SYMBOL_GPL vmlinux 0x008b1999	rt_mutex_timed_lock
 EXPORT_SYMBOL_GPL vmlinux 0x0090bd19	blk_stat_free_callback
 EXPORT_SYMBOL_GPL vmlinux 0x009304b6	ata_tf_from_fis
+EXPORT_SYMBOL_GPL vmlinux 0x00983294	fbcon_modechange_possible
 EXPORT_SYMBOL_GPL vmlinux 0x00a0d0c1	wakeup_source_drop
 EXPORT_SYMBOL_GPL vmlinux 0x00a1fd7a	pci_set_cacheline_size
 EXPORT_SYMBOL_GPL vmlinux 0x00a55557	acpi_release_memory

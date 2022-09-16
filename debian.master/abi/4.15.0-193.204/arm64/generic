@@ -19187,6 +19187,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x6b81c38b	power_supply_unreg_notifier
 EXPORT_SYMBOL_GPL vmlinux 0x6b82c900	blkg_print_stat_ios_recursive
 EXPORT_SYMBOL_GPL vmlinux 0x6bbff13b	dma_get_required_mask
 EXPORT_SYMBOL_GPL vmlinux 0x6bf1b90d	dmi_memdev_name
+EXPORT_SYMBOL_GPL vmlinux 0x6c02b833	fbcon_modechange_possible
 EXPORT_SYMBOL_GPL vmlinux 0x6c07d933	add_uevent_var
 EXPORT_SYMBOL_GPL vmlinux 0x6c0e0500	zap_vma_ptes
 EXPORT_SYMBOL_GPL vmlinux 0x6c1251fd	apei_exec_read_register

@@ -21473,6 +21473,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xf8f3a0fb	ata_ratelimit
 EXPORT_SYMBOL_GPL vmlinux 0xf8f6d46e	kvm_write_guest_offset_cached
 EXPORT_SYMBOL_GPL vmlinux 0xf8fe3d0b	kmsg_dump_register
 EXPORT_SYMBOL_GPL vmlinux 0xf9079839	usb_get_current_frame_number
+EXPORT_SYMBOL_GPL vmlinux 0xf92c33fc	fbcon_modechange_possible
 EXPORT_SYMBOL_GPL vmlinux 0xf92ce956	kdb_printf
 EXPORT_SYMBOL_GPL vmlinux 0xf932015f	__raw_notifier_call_chain
 EXPORT_SYMBOL_GPL vmlinux 0xf95322f4	kthread_parkme

@@ -18990,6 +18990,7 @@ EXPORT_SYMBOL_GPL vmlinux 0x3866e217	nvmem_device_write
 EXPORT_SYMBOL_GPL vmlinux 0x3871e881	gov_attr_set_get
 EXPORT_SYMBOL_GPL vmlinux 0x38722f80	kernel_fpu_end
 EXPORT_SYMBOL_GPL vmlinux 0x388925b2	nl_table_lock
+EXPORT_SYMBOL_GPL vmlinux 0x38b52c89	fbcon_modechange_possible
 EXPORT_SYMBOL_GPL vmlinux 0x38b7af61	set_cpus_allowed_ptr
 EXPORT_SYMBOL_GPL vmlinux 0x38e5bc5a	clk_set_rate_range
 EXPORT_SYMBOL_GPL vmlinux 0x38f1a26e	ata_sas_port_suspend

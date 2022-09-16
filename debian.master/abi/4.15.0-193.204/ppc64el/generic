@@ -19743,6 +19743,7 @@ EXPORT_SYMBOL_GPL vmlinux 0xa6e1a69d	kick_all_cpus_sync
 EXPORT_SYMBOL_GPL vmlinux 0xa6ea9d8a	ping_seq_stop
 EXPORT_SYMBOL_GPL vmlinux 0xa6eded6c	opal_xscom_read
 EXPORT_SYMBOL_GPL vmlinux 0xa7027254	perf_event_read_value
+EXPORT_SYMBOL_GPL vmlinux 0xa70447d4	fbcon_modechange_possible
 EXPORT_SYMBOL_GPL vmlinux 0xa70742eb	usb_put_intf
 EXPORT_SYMBOL_GPL vmlinux 0xa718d675	pci_epc_linkup
 EXPORT_SYMBOL_GPL vmlinux 0xa71c9460	hwmon_device_unregister
