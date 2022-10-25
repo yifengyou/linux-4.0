@@ -22,6 +22,8 @@ Bug report, questions and discussion are welcome, you can post an issue or pull 
     * [aarch64](docs/环境搭建/aarch64.md)
     * [x86](docs/环境搭建/x86.md)
     * [arm](docs/环境搭建/arm.md)
+    * [qemu内置gdb调试](docs/环境搭建/qemu内置gdb调试.md)
+    * [drgn调试大杀器](docs/环境搭建/drgn调试大杀器.md)
 * [带着问题读内核](docs/带着问题读内核.md)
     * [内核编译选项知多少](docs/带着问题读内核/内核编译选项知多少.md)
     * [内核启动日志](docs/带着问题读内核/内核启动日志.md)
@@ -30,6 +32,10 @@ Bug report, questions and discussion are welcome, you can post an issue or pull 
     * [如何获取内核编译细节](docs/带着问题读内核/如何获取内核编译细节.md)
     * [Linux如何知道系统中有多少内存](docs/带着问题读内核/Linux如何知道系统中有多少内存.md)
     * [32位系统用户空间和内核空间占比3:1可否修改](docs/带着问题读内核/32位系统用户空间和内核空间占比3_1可否修改.md)
+    * [物理页面如何添加到伙伴系统](docs/带着问题读内核/物理页面如何添加到伙伴系统.md)
+* [杂项](docs/杂项.md)
+    * [专有名词](docs/杂项/专有名词.md)
+    * [常用函数](docs/杂项/常用函数.md)
 
 
 

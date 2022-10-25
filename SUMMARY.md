@@ -9,6 +9,8 @@
     * [aarch64](docs/环境搭建/aarch64.md)
     * [x86](docs/环境搭建/x86.md)
     * [arm](docs/环境搭建/arm.md)
+    * [qemu内置gdb调试](docs/环境搭建/qemu内置gdb调试.md)
+    * [drgn调试大杀器](docs/环境搭建/drgn调试大杀器.md)
 * [带着问题读内核](docs/带着问题读内核.md)
     * [内核编译选项知多少](docs/带着问题读内核/内核编译选项知多少.md)
     * [内核启动日志](docs/带着问题读内核/内核启动日志.md)
@@ -21,3 +23,4 @@
 * [杂项](docs/杂项.md)
     * [专有名词](docs/杂项/专有名词.md)
     * [常用函数](docs/杂项/常用函数.md)
+
