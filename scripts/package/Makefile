@@ -82,7 +82,7 @@ bindeb-pkg: FORCE
 intdeb-pkg: FORCE
 	+$(CONFIG_SHELL) $(srctree)/scripts/package/builddeb
 
-clean-dirs += $(objtree)/debian/
+#clean-dirs += $(objtree)/debian/
 
 # snap-pkg
 # ---------------------------------------------------------------------------
