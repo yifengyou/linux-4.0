@@ -392,6 +392,9 @@ static noinline void __ref rest_init(void)
 	struct task_struct *tsk;
 	int pid;
 
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
+	while(1);
+
 	rcu_scheduler_starting();
 	/*
 	 * We need to spawn init first so that it obtains pid 1, however
@@ -531,15 +534,15 @@ asmlinkage __visible void __init start_kernel(void)
 	boot_cpu_init();
 	page_address_init();
 	pr_notice("%s", linux_banner);
-	setup_arch(&command_line);
+	setup_arch(&command_line); // yyf: 设置体系结构相关设置、负责初始化自举分配器
 	mm_init_cpumask(&init_mm);
 	setup_command_line(command_line);
 	setup_nr_cpu_ids();
-	setup_per_cpu_areas();
+	setup_per_cpu_areas(); // yyf: 定义percpu变量内存区域，初始化percpu变量
 	smp_prepare_boot_cpu();	/* arch-specific boot-cpu hooks */
 	boot_cpu_hotplug_init();
 
-	build_all_zonelists(NULL);
+	build_all_zonelists(NULL); // yyf: 建立node和zone数据结构
 	page_alloc_init();
 
 	pr_notice("Kernel command line: %s\n", boot_command_line);
@@ -562,7 +565,7 @@ asmlinkage __visible void __init start_kernel(void)
 	vfs_caches_init_early();
 	sort_main_extable();
 	trap_init();
-	mm_init();
+	mm_init(); // yyf: 停用bootmem分配器，迁移到实际的内存管理函数
 
 	ftrace_init();
 
@@ -634,17 +637,29 @@ asmlinkage __visible void __init start_kernel(void)
 	early_boot_irqs_disabled = false;
 	local_irq_enable();
 
-	kmem_cache_init_late();
+	kmem_cache_init_late(); // yyf: 初始化小块内存区域分配器
 
 	/*
 	 * HACK ALERT! This is early. We're enabling the console before
 	 * we've done PCI setups etc, and console_init() must be aware of
 	 * this. But we do want output early, in case something goes wrong.
 	 */
+
 	console_init();
 	if (panic_later)
 		panic("Too many boot %s vars at `%s'", panic_later,
 		      panic_param);
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
+	pr_emerg("yyf: this is pr_emerg\n");
+	pr_alert("yyf: this is pr_alert\n");
+	pr_crit("yyf: this is pr_crit\n");
+	pr_err("yyf: this is pr_err\n");
+	pr_warning("yyf: this is pr_warnning\n");
+	pr_warn("yyf: this is pr_warn\n");
+	pr_notice("yyf: this is pr_notice\n");
+	pr_info("yyf: this is pr_info\n");
+	printk("yyf: this is printk\n");
+
 
 	lockdep_info();
 
@@ -674,7 +689,7 @@ asmlinkage __visible void __init start_kernel(void)
 #endif
 	kmemleak_init();
 	debug_objects_mem_init();
-	setup_per_cpu_pageset();
+	setup_per_cpu_pageset(); // yyf: 为每个cpu的zone的pageset数组的第一个元素分配内存
 	numa_policy_init();
 	acpi_early_init();
 	if (late_time_init)
@@ -688,6 +703,9 @@ asmlinkage __visible void __init start_kernel(void)
 #endif
 	thread_stack_cache_init();
 	cred_init();
+	
+
+
 	fork_init();
 	proc_caches_init();
 	buffer_init();
@@ -714,6 +732,7 @@ asmlinkage __visible void __init start_kernel(void)
 		efi_free_boot_services();
 	}
 
+	
 	/* Do the rest non-__init'ed, we're now alive */
 	rest_init();
 
