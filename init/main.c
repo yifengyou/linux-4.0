@@ -468,6 +468,8 @@ void __init parse_early_param(void)
 {
 	static int done __initdata;
 	static char tmp_cmdline[COMMAND_LINE_SIZE] __initdata;
+	
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 
 	if (done)
 		return;

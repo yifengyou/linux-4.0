@@ -347,6 +347,8 @@ static void __init early_reserve_initrd(void)
 	u64 ramdisk_size  = get_ramdisk_size();
 	u64 ramdisk_end   = PAGE_ALIGN(ramdisk_image + ramdisk_size);
 
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
+
 	if (!boot_params.hdr.type_of_loader ||
 	    !ramdisk_image || !ramdisk_size)
 		return;		/* No initrd provided by bootloader */
@@ -956,7 +958,10 @@ void __init setup_arch(char **cmdline_p)
 	 */
 	x86_configure_nx();
 
-	parse_early_param();
+
+	// yyf: 解析启动参数，这里是在arch中，负责架构相关的初始化设置。
+	// 此时内核已经加载到内存中，但大部分的子系统还未初始化。
+	parse_early_param(); 
 
 	if (efi_enabled(EFI_BOOT))
 		efi_memblock_x86_reserve_range();

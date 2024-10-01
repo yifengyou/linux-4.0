@@ -1,12 +1,12 @@
-/* SPDX-License-Identifier: GPL-2.0 */
+﻿/* SPDX-License-Identifier: GPL-2.0 */
 #ifndef _ASM_E820_API_H
 #define _ASM_E820_API_H
 
 #include <asm/e820/types.h>
 
 extern struct e820_table *e820_table;
-extern struct e820_table *e820_table_kexec;
-extern struct e820_table *e820_table_firmware;
+extern struct e820_table *e820_table_kexec; // 为kexec操作准备的e820表，部分内存已经分配给就内核
+extern struct e820_table *e820_table_firmware; // 允许内核在需要时使用固件提供的内存映射信息
 
 extern unsigned long pci_mem_start;
 

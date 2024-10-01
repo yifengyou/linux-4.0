@@ -1,4 +1,4 @@
-/* SPDX-License-Identifier: GPL-2.0 */
+﻿/* SPDX-License-Identifier: GPL-2.0 */
 /*
  *	header.S
  *
@@ -293,7 +293,7 @@ _start:
 		# Explicitly enter this as bytes, or the assembler
 		# tries to generate a 3-byte jump here, which causes
 		# everything else to push off to the wrong offset.
-		.byte	0xeb		# short (2-byte) jump
+		.byte	0xeb		# short (2-byte) jump /* yyf: jump to start_of_setup */
 		.byte	start_of_setup-1f
 1:
 
@@ -563,7 +563,7 @@ handover_offset:	.long 0			# Filled in by build.c
 	.section ".entrytext", "ax"
 start_of_setup:
 # Force %es = %ds
-	movw	%ds, %ax
+	movw	%ds, %ax # yyf: setup data segment 
 	movw	%ax, %es
 	cld
 
@@ -572,7 +572,7 @@ start_of_setup:
 # pointer if %ss is invalid.  Otherwise leave it alone, LOADLIN sets up the
 # stack behind its own code, so we can't blindly put it directly past the heap.
 
-	movw	%ss, %dx
+	movw	%ss, %dx        # yyf: setup stack
 	cmpw	%ax, %dx	# %ds == %ss?
 	movw	%sp, %dx
 	je	2f		# -> assume %sp is reasonably set

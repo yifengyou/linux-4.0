@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Low level x86 E820 memory map handling functions.
  *
  * The firmware and bootloader passes us the "E820 table", which is the primary
@@ -188,11 +188,25 @@ static void __init e820_print_type(enum e820_type type)
 void __init e820__print_table(char *who)
 {
 	int i;
+	
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 
 	for (i = 0; i < e820_table->nr_entries; i++) {
 		pr_info("%s: [mem %#018Lx-%#018Lx] ", who,
 		       e820_table->entries[i].addr,
 		       e820_table->entries[i].addr + e820_table->entries[i].size - 1);
+
+		e820_print_type(e820_table->entries[i].type);
+		pr_cont("\n");
+	}
+	for (i = 0; i < e820_table->nr_entries; i++) {
+		pr_info("yyf: %s: [mem %#018Lx-%#018Lx] %9llu(B) = %9llu(KB) = %9llu(MB) = %9llu(GB) ", who,
+		       e820_table->entries[i].addr,
+		       e820_table->entries[i].addr + e820_table->entries[i].size - 1,
+		       e820_table->entries[i].size,
+		       e820_table->entries[i].size / 1024,
+		       e820_table->entries[i].size / 1024 / 1024,
+		       e820_table->entries[i].size / 1024 / 1024 /1024);
 
 		e820_print_type(e820_table->entries[i].type);
 		pr_cont("\n");
@@ -303,6 +317,7 @@ int __init e820__update_table(struct e820_table *table)
 		return -1;
 
 	BUG_ON(table->nr_entries > max_nr_entries);
+	pr_info("yyf: current e820 entry num %d max %d\n", table->nr_entries, max_nr_entries);
 
 	/* Bail out if we find any unreasonable addresses in the map: */
 	for (i = 0; i < table->nr_entries; i++) {
@@ -1173,6 +1188,7 @@ void __init e820__reserve_resources_late(void)
 char *__init e820__memory_setup_default(void)
 {
 	char *who = "BIOS-e820";
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 
 	/*
 	 * Try to copy the BIOS-supplied E820-map.
@@ -1211,6 +1227,7 @@ char *__init e820__memory_setup_default(void)
 void __init e820__memory_setup(void)
 {
 	char *who;
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 
 	/* This is a firmware interface ABI - make sure we don't break it: */
 	BUILD_BUG_ON(sizeof(struct boot_e820_entry) != 20);

@@ -192,6 +192,7 @@ char *parse_args(const char *doing,
 		int irq_was_disabled;
 
 		args = next_arg(args, &param, &val);
+		pr_info("yyf: parse per param:%s value=%s\n", param, val);
 		/* Stop at -- */
 		if (!val && strcmp(param, "--") == 0)
 			return err ?: args;

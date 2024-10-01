@@ -1,4 +1,4 @@
-/* -*- linux-c -*- ------------------------------------------------------- *
+﻿/* -*- linux-c -*- ------------------------------------------------------- *
  *
  *   Copyright (C) 1991, 1992 Linus Torvalds
  *   Copyright 2007 rPath, Inc. - All Rights Reserved
@@ -37,7 +37,7 @@ static void copy_boot_params(void)
 		(const struct old_cmdline *)OLD_CL_ADDRESS;
 
 	BUILD_BUG_ON(sizeof boot_params != 4096);
-	memcpy(&boot_params.hdr, &hdr, sizeof hdr);
+	memcpy(&boot_params.hdr, &hdr, sizeof hdr); // yyf: hdr 就是引导程序传递的信息
 
 	if (!boot_params.hdr.cmd_line_ptr &&
 	    oldcmd->cl_magic == OLD_CL_MAGIC) {
@@ -135,10 +135,11 @@ static void init_heap(void)
 void main(void)
 {
 	/* First, copy the boot header into the "zeropage" */
-	copy_boot_params();
+	copy_boot_params(); // yyf: 拷贝 hdr 到 setup_header
 
 	/* Initialize the early-boot console */
-	console_init();
+	console_init(); // yyf: 初始化early printk 控制台
+	
 	if (cmdline_find_option_bool("debug"))
 		puts("early console in setup code\n");
 
@@ -156,7 +157,7 @@ void main(void)
 	set_bios_mode();
 
 	/* Detect memory layout */
-	detect_memory();
+	detect_memory(); // yyf: 实模式下，调用BIOS服务，探测内存布局，将信息放在boot_params
 
 	/* Set keyboard repeat rate (why?) and query the lock flags */
 	keyboard_init();
