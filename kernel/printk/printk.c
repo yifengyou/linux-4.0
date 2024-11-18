@@ -2760,6 +2760,7 @@ int unregister_console(struct console *console)
 {
         struct console *a, *b;
 	int res;
+	dump_stack();
 
 	pr_info("%sconsole [%s%d] disabled\n",
 		(console->flags & CON_BOOT) ? "boot" : "" ,

@@ -33,7 +33,9 @@
 # System.map is generated to document addresses of all kernel symbols
 
 # Error out on error
-set -e
+set -xe
+
+# echo "yyf: [$0] [$1] [$2] [$3]"
 
 # Nice output in kbuild format
 # Will be supressed by "make -s"
@@ -84,6 +86,12 @@ modpost_link()
 			${KBUILD_VMLINUX_LIBS}				\
 			--end-group"
 	fi
+
+	#echo "yyf: [${LD} ${LDFLAGS} -r -o ${1} ${objects}]"
+	#echo "yyf: LD:[${LD}]"
+	#echo "yyf: LDFLAGS:[${LDFLAGS}]"
+	#echo "yyf: \${1}:[${1}}]"
+	#echo "yyf: objects:[${objects}]"
 	${LD} ${LDFLAGS} -r -o ${1} ${objects}
 }
 
@@ -112,6 +120,14 @@ vmlinux_link()
 				--end-group				\
 				${1}"
 		fi
+
+		#echo "yyf: [${LD} ${LDFLAGS} ${LDFLAGS_vmlinux} -o ${2} -T ${lds} ${objects}]"
+		#echo "yyf: LD:[${LD}]"
+		#echo "yyf: LDFLAGS:[${LDFLAGS}]"
+		#echo "yyf: LDFLAGS_vmlinux:[${LDFLAGS_vmlinux}]"
+		#echo "yyf: \$2:[${2}]"
+		#echo "yyf: lds:[${lds}]"
+		#echo "yyf: objects:[${objects}]"
 
 		${LD} ${LDFLAGS} ${LDFLAGS_vmlinux} -o ${2}		\
 			-T ${lds} ${objects}

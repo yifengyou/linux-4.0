@@ -578,6 +578,8 @@ EXPORT_SYMBOL(kthread_stop);
 int kthreadd(void *unused)
 {
 	struct task_struct *tsk = current;
+	
+	pr_info("yyf: kthread 2 kthreadd running!! Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 
 	/* Setup a clean context for our children to inherit. */
 	set_task_comm(tsk, "kthreadd");
@@ -588,6 +590,7 @@ int kthreadd(void *unused)
 	current->flags |= PF_NOFREEZE;
 	cgroup_init_kthreadd();
 
+	pr_info("yyf: kthread 2 kthreadd enter loop!! Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 	for (;;) {
 		set_current_state(TASK_INTERRUPTIBLE);
 		if (list_empty(&kthread_create_list))

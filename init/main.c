@@ -1,4 +1,4 @@
-/*
+﻿/*
  *  linux/init/main.c
  *
  *  Copyright (C) 1991, 1992  Linus Torvalds
@@ -387,13 +387,32 @@ static void __init setup_command_line(char *command_line)
 
 static __initdata DECLARE_COMPLETION(kthreadd_done);
 
+void yyf_count_all_threads(void) {
+	struct task_struct *p;
+	int kthread_count;
+
+	kthread_count = 0;
+	for_each_process(p) {
+		kthread_count++;
+	}
+
+	pr_info("yyf: current thread num is %d\n", kthread_count);
+}
+
+
 static noinline void __ref rest_init(void)
 {
 	struct task_struct *tsk;
 	int pid;
 
 	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
-	while(1);
+	//while(1);
+
+
+	// yyf: show current thread num
+	pr_info("yyf: kernel_thread no kthread created! Func:%s, File: %s, Line: %d\n", 
+			__FUNCTION__, __FILE__, __LINE__);
+	yyf_count_all_threads();
 
 	rcu_scheduler_starting();
 	/*
@@ -402,6 +421,13 @@ static noinline void __ref rest_init(void)
 	 * we schedule it before we create kthreadd, will OOPS.
 	 */
 	pid = kernel_thread(kernel_init, NULL, CLONE_FS);
+
+	// yyf: show current thread num
+	pr_info("yyf: kernel_thread kernel_init Func:%s, File: %s, Line: %d\n", 
+			__FUNCTION__, __FILE__, __LINE__);
+	yyf_count_all_threads();
+	
+
 	/*
 	 * Pin init on the boot CPU. Task migration is not properly working
 	 * until sched_init_smp() has been run. It will set the allowed
@@ -417,6 +443,11 @@ static noinline void __ref rest_init(void)
 	rcu_read_lock();
 	kthreadd_task = find_task_by_pid_ns(pid, &init_pid_ns);
 	rcu_read_unlock();
+
+	// yyf: show current thread num
+	pr_info("yyf: kernel_thread kthreadd Func:%s, File: %s, Line: %d\n", 
+			__FUNCTION__, __FILE__, __LINE__);
+	yyf_count_all_threads();
 
 	/*
 	 * Enable might_sleep() and smp_processor_id() checks.
@@ -443,6 +474,8 @@ static int __init do_early_param(char *param, char *val,
 				 const char *unused, void *arg)
 {
 	const struct obs_kernel_param *p;
+
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 
 	for (p = __setup_start; p < __setup_end; p++) {
 		if ((p->early && parameq(param, p->str)) ||
@@ -519,6 +552,8 @@ asmlinkage __visible void __init start_kernel(void)
 {
 	char *command_line;
 	char *after_dashes;
+	pr_notice("yyf: enable early printk");
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 
 	set_task_stack_end_magic(&init_task);
 	smp_setup_processor_id();
@@ -648,10 +683,14 @@ asmlinkage __visible void __init start_kernel(void)
 	 */
 
 	console_init();
+	
+	pr_info("\n\n*********************************************************\n\n");
+	pr_info("yyf: disable early printk\n");
+
+	
 	if (panic_later)
 		panic("Too many boot %s vars at `%s'", panic_later,
 		      panic_param);
-	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 	pr_emerg("yyf: this is pr_emerg\n");
 	pr_alert("yyf: this is pr_alert\n");
 	pr_crit("yyf: this is pr_crit\n");
@@ -734,7 +773,9 @@ asmlinkage __visible void __init start_kernel(void)
 		efi_free_boot_services();
 	}
 
-	
+	// while(1);
+	pr_info("yyf: Enable multi ps!!! Func:%s, File: %s, Line: %d\n", 
+		__FUNCTION__, __FILE__, __LINE__);
 	/* Do the rest non-__init'ed, we're now alive */
 	rest_init();
 
@@ -927,8 +968,11 @@ static void __init do_initcalls(void)
 {
 	int level;
 
-	for (level = 0; level < ARRAY_SIZE(initcall_levels) - 1; level++)
+	for (level = 0; level < ARRAY_SIZE(initcall_levels) - 1; level++) {
+		pr_info("yyf: do_initcalls_%d !! Func:%s, File: %s, Line: %d\n",
+				level, __FUNCTION__, __FILE__, __LINE__);
 		do_initcall_level(level);
+	}
 }
 
 /*
@@ -1030,6 +1074,8 @@ static int __ref kernel_init(void *unused)
 {
 	int ret;
 
+	pr_info("yyf: kthread 1 kernel_init running!! Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
+
 	kernel_init_freeable();
 	/* need to finish all async __init code before freeing the memory */
 	async_synchronize_full();
@@ -1048,6 +1094,10 @@ static int __ref kernel_init(void *unused)
 
 	rcu_end_inkernel_boot();
 
+	
+	pr_info("yyf: kthread 1 kernel_init enter userspace %s!! Func:%s, File: %s, Line: %d\n",
+		ramdisk_execute_command, __FUNCTION__, __FILE__, __LINE__);
+
 	if (ramdisk_execute_command) {
 		ret = run_init_process(ramdisk_execute_command);
 		if (!ret)
@@ -1055,6 +1105,10 @@ static int __ref kernel_init(void *unused)
 		pr_err("Failed to execute %s (error %d)\n",
 		       ramdisk_execute_command, ret);
 	}
+
+	
+	pr_info("yyf: kthread 1 kernel_init enter userspace %s!! Func:%s, File: %s, Line: %d\n",
+		execute_command, __FUNCTION__, __FILE__, __LINE__);
 
 	/*
 	 * We try each of these until one succeeds.
@@ -1069,6 +1123,9 @@ static int __ref kernel_init(void *unused)
 		panic("Requested init %s failed (error %d).",
 		      execute_command, ret);
 	}
+
+	
+	pr_info("yyf: kthread 1 kernel_init enter userspace!! Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 	if (!try_to_run_init_process("/sbin/init") ||
 	    !try_to_run_init_process("/etc/init") ||
 	    !try_to_run_init_process("/bin/init") ||

@@ -987,6 +987,7 @@ static void kgdb_initial_breakpoint(void)
 {
 	kgdb_break_asap = 0;
 
+	dump_stack();
 	pr_crit("Waiting for connection from remote gdb...\n");
 	kgdb_breakpoint();
 }
@@ -1097,8 +1098,11 @@ static int __init opt_kgdb_wait(char *str)
 	kgdb_break_asap = 1;
 
 	kdb_init(KDB_INIT_EARLY);
-	if (kgdb_io_module_registered)
+	pr_info("yyf: kgdb_io_module_registered=%d\n", kgdb_io_module_registered);
+	if (kgdb_io_module_registered) {
+		pr_info("yyf: call kgdb_initial_breakpoint in opt_kgdb_wait\n");
 		kgdb_initial_breakpoint();
+	}
 
 	return 0;
 }

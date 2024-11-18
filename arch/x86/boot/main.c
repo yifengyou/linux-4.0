@@ -134,6 +134,7 @@ static void init_heap(void)
 
 void main(void)
 {
+	// yyf: 此时处于实模式，setup.bin
 	/* First, copy the boot header into the "zeropage" */
 	copy_boot_params(); // yyf: 拷贝 hdr 到 setup_header
 
@@ -147,7 +148,7 @@ void main(void)
 	init_heap();
 
 	/* Make sure we have all the proper CPU support */
-	if (validate_cpu()) {
+	if (validate_cpu()) { // yyf: 使用汇编指令检查cpu状态，指令集
 		puts("Unable to boot - please use a kernel appropriate "
 		     "for your CPU.\n");
 		die();
@@ -178,6 +179,7 @@ void main(void)
 	/* Set the video mode */
 	set_video();
 
+	// 此时仍然处于实模式，上述操作全都是在实模式完成的最基本初始化
 	/* Do the last things and invoke protected mode */
 	go_to_protected_mode();
 }

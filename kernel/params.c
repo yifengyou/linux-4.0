@@ -187,6 +187,9 @@ char *parse_args(const char *doing,
 	if (*args)
 		pr_debug("doing %s, parsing ARGS: '%s'\n", doing, args);
 
+	// yyf add dump_stack()
+	// dump_stack();
+	
 	while (*args) {
 		int ret;
 		int irq_was_disabled;

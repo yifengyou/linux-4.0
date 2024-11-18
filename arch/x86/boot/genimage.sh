@@ -1,4 +1,8 @@
 #!/bin/sh
+set -x
+
+echo "yyf: genimage.sh run [$@]"
+
 #
 # This file is subject to the terms and conditions of the GNU General Public
 # License.  See the file "COPYING" in the main directory of this archive
@@ -82,7 +86,7 @@ genfdimage288() {
 
 geniso() {
 	tmp_dir=`dirname $FIMAGE`/isoimage
-	rm -rf $tmp_dir
+	#rm -rf $tmp_dir
 	mkdir $tmp_dir
 	for i in lib lib64 share ; do
 		for j in syslinux ISOLINUX ; do
@@ -114,11 +118,12 @@ geniso() {
 	if [ -f "$FDINITRD" ] ; then
 		cp "$FDINITRD" $tmp_dir/initrd.img
 	fi
+	echo "yyf: workdir:"`pwd`
 	genisoimage -J -r -input-charset=utf-8 -quiet -o $FIMAGE \
 		-b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 \
 		-boot-info-table $tmp_dir
 	isohybrid $FIMAGE 2>/dev/null || true
-	rm -rf $tmp_dir
+	#rm -rf $tmp_dir
 }
 
 case $1 in

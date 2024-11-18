@@ -109,6 +109,7 @@ $(obj)/setup.bin: $(obj)/setup.elf FORCE
 	$(call if_changed,objcopy)
 
 $(obj)/compressed/vmlinux: FORCE
+	echo "yyf: $(Q)$(MAKE) $(build)=$(obj)/compressed $@"
 	$(Q)$(MAKE) $(build)=$(obj)/compressed $@
 
 # Set this if you want to pass append arguments to the
@@ -116,7 +117,7 @@ $(obj)/compressed/vmlinux: FORCE
 FDARGS =
 # Set this if you want an initrd included with the
 # bzdisk/fdimage/isoimage kernel
-FDINITRD =
+FDINITRD = /tmp/initrd.img-4.15.18+
 
 image_cmdline = default linux $(FDARGS) $(if $(FDINITRD),initrd=initrd.img,)
 
@@ -141,6 +142,7 @@ fdimage288: $(obj)/bzImage $(obj)/mtools.conf
 	@$(kecho) 'Kernel: $(obj)/fdimage is ready'
 
 isoimage: $(obj)/bzImage
+	echo "yyf: $(cmd_genimage) ,isoimage, $(obj)/image.iso"
 	$(call cmd,genimage,isoimage,$(obj)/image.iso)
 	@$(kecho) 'Kernel: $(obj)/image.iso is ready'
 
