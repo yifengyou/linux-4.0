@@ -601,7 +601,7 @@ asmlinkage __visible void __init start_kernel(void)
 	setup_log_buf(0);
 	vfs_caches_init_early();
 	sort_main_extable();
-	trap_init();
+	trap_init(); // 初始化异常
 	mm_init(); // yyf: 停用bootmem分配器，迁移到实际的内存管理函数
 
 	ftrace_init();
@@ -960,19 +960,27 @@ static void __init do_initcall_level(int level)
 		   level, level,
 		   NULL, &repair_env_string);
 
-	for (fn = initcall_levels[level]; fn < initcall_levels[level+1]; fn++)
+	for (fn = initcall_levels[level]; fn < initcall_levels[level+1]; fn++) {
+		pr_info("yyf: do_initcalls_%d Call Func:%pF\n", level, *fn);
 		do_one_initcall(*fn);
+	}
 }
 
 static void __init do_initcalls(void)
 {
 	int level;
+	
+	pr_info("yyf: do_initcalls begin!! Func:%s, File: %s, Line: %d\n",
+			__FUNCTION__, __FILE__, __LINE__);
 
 	for (level = 0; level < ARRAY_SIZE(initcall_levels) - 1; level++) {
 		pr_info("yyf: do_initcalls_%d !! Func:%s, File: %s, Line: %d\n",
 				level, __FUNCTION__, __FILE__, __LINE__);
 		do_initcall_level(level);
 	}
+	
+	pr_info("yyf: do_initcalls finished!! Func:%s, File: %s, Line: %d\n",
+			__FUNCTION__, __FILE__, __LINE__);
 }
 
 /*
@@ -996,9 +1004,15 @@ static void __init do_basic_setup(void)
 static void __init do_pre_smp_initcalls(void)
 {
 	initcall_t *fn;
-
-	for (fn = __initcall_start; fn < __initcall0_start; fn++)
+	
+	pr_info("yyf: early_initcalls begin!! Func:%s, File: %s, Line: %d\n",
+			__FUNCTION__, __FILE__, __LINE__);
+	for (fn = __initcall_start; fn < __initcall0_start; fn++) {
+		pr_info("yyf: early_initcalls call %pF\n", *fn);
 		do_one_initcall(*fn);
+	}
+	pr_info("yyf: early_initcalls finished!! Func:%s, File: %s, Line: %d\n",
+			__FUNCTION__, __FILE__, __LINE__);
 }
 
 /*

@@ -175,6 +175,7 @@ int badblocks_set(struct badblocks *bb, sector_t s, int sectors,
 	int lo, hi;
 	int rv = 0;
 	unsigned long flags;
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 
 	if (bb->shift < 0)
 		/* badblocks are disabled */
@@ -342,6 +343,7 @@ int badblocks_clear(struct badblocks *bb, sector_t s, int sectors)
 	int lo, hi;
 	sector_t target = s + sectors;
 	int rv = 0;
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 
 	if (bb->shift > 0) {
 		/* When clearing we round the start up and the end down.
@@ -440,6 +442,7 @@ EXPORT_SYMBOL_GPL(badblocks_clear);
  */
 void ack_all_badblocks(struct badblocks *bb)
 {
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 	if (bb->page == NULL || bb->changed)
 		/* no point even trying */
 		return;
@@ -478,6 +481,8 @@ ssize_t badblocks_show(struct badblocks *bb, char *page, int unack)
 	int i;
 	u64 *p = bb->page;
 	unsigned seq;
+
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 
 	if (bb->shift < 0)
 		return 0;
@@ -582,6 +587,7 @@ static int __badblocks_init(struct device *dev, struct badblocks *bb,
  */
 int badblocks_init(struct badblocks *bb, int enable)
 {
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 	return __badblocks_init(NULL, bb, enable);
 }
 EXPORT_SYMBOL_GPL(badblocks_init);
@@ -600,6 +606,7 @@ EXPORT_SYMBOL_GPL(devm_init_badblocks);
  */
 void badblocks_exit(struct badblocks *bb)
 {
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 	if (!bb)
 		return;
 	if (bb->dev)

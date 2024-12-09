@@ -3485,6 +3485,7 @@ static struct kobj_type rdev_ktype = {
 
 int md_rdev_init(struct md_rdev *rdev)
 {
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
 	rdev->desc_nr = -1;
 	rdev->saved_raid_disk = -1;
 	rdev->raid_disk = -1;
@@ -9120,6 +9121,9 @@ int rdev_set_badblocks(struct md_rdev *rdev, sector_t s, int sectors,
 {
 	struct mddev *mddev = rdev->mddev;
 	int rv;
+	
+	pr_info("yyf: Func:%s, File: %s, Line: %d\n", __FUNCTION__, __FILE__, __LINE__);
+	
 	if (is_new)
 		s += rdev->new_data_offset;
 	else
